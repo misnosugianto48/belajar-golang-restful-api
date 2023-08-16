@@ -1,10 +1,11 @@
 ### Package
 
-1. github.com/go-playground/validator/v10
-2. github.com/julienschmidt/httprouter
-3. github.com/sirupsen/logrus
-4. github.com/stretchr/testify
+1. https://github.com/go-playground/validator/v10
+2. https://github.com/julienschmidt/httprouter
+3. https://github.com/sirupsen/logrus
+4. https://github.com/stretchr/testify
 5. https://github.com/golang-migrate/migrate
+6. https://github.com/go-sql-driver/mysql
 
 ### Create Migrate
 
