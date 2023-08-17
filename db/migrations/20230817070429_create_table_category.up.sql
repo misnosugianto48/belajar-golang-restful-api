@@ -2,7 +2,9 @@
 
 CREATE TABLE
     category (
-        id INT NOT NULL AUTO_INCREMENT,
+        category_id VARCHAR(255) NOT NULL,
         name VARCHAR(30) NOT NULL,
-        PRIMARY KEY(id)
+        created_at TIMESTAMP NOT NULL,
+        updated_at TIMESTAMP NOT NULL,
+        PRIMARY KEY(category_id)
     );

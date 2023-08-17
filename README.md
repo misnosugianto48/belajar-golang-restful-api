@@ -6,6 +6,7 @@
 4. https://github.com/stretchr/testify
 5. https://github.com/golang-migrate/migrate
 6. https://github.com/go-sql-driver/mysql
+7. https://github.com/google/uuid
 
 ### Create Migrate
 

@@ -1,4 +1,4 @@
-package category
+package category_repo
 
 import (
 	"belajar-golang-restful-api/model/entity"

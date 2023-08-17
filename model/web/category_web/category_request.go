@@ -1,4 +1,4 @@
-package category
+package category_web
 
 type CategoryRequest struct {
 	Name string
