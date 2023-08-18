@@ -2,11 +2,11 @@ package helper
 
 import (
 	"belajar-golang-restful-api/model/entity"
-	"belajar-golang-restful-api/model/web/category_web"
+	categoryweb "belajar-golang-restful-api/model/web/category_web"
 )
 
-func ToCategoryResponse(category entity.Category) category_web.CategoryResponse {
-	return category_web.CategoryResponse{
+func ToCategoryResponse(category entity.Category) categoryweb.CategoryResponse {
+	return categoryweb.CategoryResponse{
 		CategoryId: category.CategoryId,
 		Name:       category.Name,
 		CreatedAt:  category.CreatedAt,
@@ -14,8 +14,8 @@ func ToCategoryResponse(category entity.Category) category_web.CategoryResponse 
 	}
 }
 
-func ToCategoryResponses(categories []entity.Category) []category_web.CategoryResponse {
-	var categoryResponses []category_web.CategoryResponse
+func ToCategoryResponses(categories []entity.Category) []categoryweb.CategoryResponse {
+	var categoryResponses []categoryweb.CategoryResponse
 
 	for _, category := range categories {
 		categoryResponses = append(categoryResponses, ToCategoryResponse(category))

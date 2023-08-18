@@ -1,4 +1,4 @@
-package category_web
+package categoryweb
 
 type CategoryRequest struct {
 	Name      string `validate:"required,min=1,max=30" json:"name"`

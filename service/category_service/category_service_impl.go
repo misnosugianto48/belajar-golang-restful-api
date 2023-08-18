@@ -1,9 +1,9 @@
-package category_service
+package categoryservice
 
 import (
 	"belajar-golang-restful-api/helper"
 	"belajar-golang-restful-api/model/entity"
-	"belajar-golang-restful-api/model/web/category_web"
+	categoryweb "belajar-golang-restful-api/model/web/category_web"
 	"belajar-golang-restful-api/repository/category_repo"
 	"context"
 	"database/sql"
@@ -18,7 +18,7 @@ type CategoryServiceImpl struct {
 	Validate           *validator.Validate
 }
 
-func (service *CategoryServiceImpl) Create(ctx context.Context, r category_web.CategoryRequest) category_web.CategoryResponse {
+func (service *CategoryServiceImpl) Create(ctx context.Context, r categoryweb.CategoryRequest) categoryweb.CategoryResponse {
 	//	validate request body
 	err := service.Validate.Struct(r)
 	helper.PanicIfError("Failed to validation request", err)
@@ -42,7 +42,7 @@ func (service *CategoryServiceImpl) Create(ctx context.Context, r category_web.C
 	return helper.ToCategoryResponse(category)
 }
 
-func (service *CategoryServiceImpl) Update(ctx context.Context, r category_web.CategoryUpdateRequest) category_web.CategoryResponse {
+func (service *CategoryServiceImpl) Update(ctx context.Context, r categoryweb.CategoryUpdateRequest) categoryweb.CategoryResponse {
 	//	validate request body
 	err := service.Validate.Struct(r)
 	helper.PanicIfError("Failed to validation request", err)
@@ -79,7 +79,7 @@ func (service *CategoryServiceImpl) Delete(ctx context.Context, categoryId strin
 	service.categoryRepository.Delete(ctx, tx, category)
 }
 
-func (service *CategoryServiceImpl) FIndById(ctx context.Context, categoryId string) category_web.CategoryResponse {
+func (service *CategoryServiceImpl) FIndById(ctx context.Context, categoryId string) categoryweb.CategoryResponse {
 	tx, err := service.DB.Begin()
 	helper.PanicIfError("Failed starts transactions: ", err)
 	defer helper.CommitOrRollback(tx)
@@ -90,7 +90,7 @@ func (service *CategoryServiceImpl) FIndById(ctx context.Context, categoryId str
 	return helper.ToCategoryResponse(category)
 }
 
-func (service *CategoryServiceImpl) FindAll(ctx context.Context) []category_web.CategoryResponse {
+func (service *CategoryServiceImpl) FindAll(ctx context.Context) []categoryweb.CategoryResponse {
 	tx, err := service.DB.Begin()
 	helper.PanicIfError("Failed starts transactions: ", err)
 	defer helper.CommitOrRollback(tx)

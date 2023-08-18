@@ -1,4 +1,4 @@
-package category_web
+package categoryweb
 
 type CategoryResponse struct {
 	CategoryId string
