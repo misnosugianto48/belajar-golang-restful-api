@@ -1,7 +1,5 @@
 package entity
 
-import "time"
-
 type Product struct {
 	ProductId     string
 	Name          string

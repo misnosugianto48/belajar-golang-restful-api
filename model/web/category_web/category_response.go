@@ -1,6 +1,8 @@
 package category_web
 
 type CategoryResponse struct {
-	Id   int
-	Name string
+	CategoryId string
+	Name       string
+	CreatedAt  string
+	UpdatedAt  string
 }

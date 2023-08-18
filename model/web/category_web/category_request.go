@@ -1,10 +1,13 @@
 package category_web
 
 type CategoryRequest struct {
-	Name string
+	Name      string
+	CreatedAt string
+	UpdatedAt string
 }
 
 type CategoryUpdateRequest struct {
-	Id   int
-	Name string
+	CategoryId string
+	Name       string
+	UpdatedAt  string
 }
