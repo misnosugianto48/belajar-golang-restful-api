@@ -8,14 +8,21 @@ import (
 	"context"
 	"database/sql"
 	"time"
+
+	"github.com/go-playground/validator"
 )
 
 type CategoryServiceImpl struct {
 	categoryRepository category_repo.CategoryRepository
 	DB                 *sql.DB
+	Validate           *validator.Validate
 }
 
 func (service *CategoryServiceImpl) Create(ctx context.Context, r category_web.CategoryRequest) category_web.CategoryResponse {
+	//	validate request body
+	err := service.Validate.Struct(r)
+	helper.PanicIfError("Failed to validation request", err)
+
 	//	start transactions database
 	tx, err := service.DB.Begin()
 	helper.PanicIfError("Failed starts transactions: ", err)
@@ -36,6 +43,10 @@ func (service *CategoryServiceImpl) Create(ctx context.Context, r category_web.C
 }
 
 func (service *CategoryServiceImpl) Update(ctx context.Context, r category_web.CategoryUpdateRequest) category_web.CategoryResponse {
+	//	validate request body
+	err := service.Validate.Struct(r)
+	helper.PanicIfError("Failed to validation request", err)
+
 	tx, err := service.DB.Begin()
 	helper.PanicIfError("Failed starts transactions: ", err)
 	defer helper.CommitOrRollback(tx)
