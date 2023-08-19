@@ -4,7 +4,7 @@ CREATE TABLE
     category (
         category_id VARCHAR(255) NOT NULL,
         name VARCHAR(30) NOT NULL,
-        created_at TIMESTAMP NOT NULL,
-        updated_at TIMESTAMP NOT NULL,
+        created_at TIMESTAMP,
+        updated_at TIMESTAMP,
         PRIMARY KEY(category_id)
     );

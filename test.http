@@ -1,0 +1,24 @@
+GET http://127.0.0.1:3000/api/categories/
+Accept: application/json
+
+###
+POST http://127.0.0.1:3000/api/categories
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": ""
+}
+
+###
+PUT http://127.0.0.1:3000/api/categories/category-282e6539-0ef
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Electronic"
+}
+
+###Delete
+DELETE http://127.0.0.1:3000/api/categories/category-eb10f854-a8c
+content-type: application/json
